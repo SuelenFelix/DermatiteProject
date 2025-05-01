@@ -1,54 +1,95 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { Image } from "expo-image";
+import { useRouter } from "expo-router";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import ParallaxScrollView from "@/components/ParallaxScrollView";
+import { ThemedText } from "@/components/ThemedText";
+import { ThemedView } from "@/components/ThemedView";
+import {
+  Feather,
+  FontAwesome5,
+  MaterialCommunityIcons,
+  MaterialIcons,
+} from "@expo/vector-icons";
 
 export default function HomeScreen() {
+  const router = useRouter();
+
+  const sections = [
+    {
+      title: "O que é Dermatite?",
+      screen: "dermatite",
+      icon: <MaterialIcons name="menu-book" size={32} color="#4A6FA5" />,
+    },
+    {
+      title: "Tipos de Dermatite",
+      screen: "tiposDermatite",
+      icon: (
+        <MaterialCommunityIcons name="format-list-bulleted" size={32} color="#4A6FA5" />
+      ),
+    },
+    {
+      title: "Sintomas Comuns",
+      screen: "sintomas",
+      icon: <MaterialIcons name="pets" size={32} color="#4A6FA5" />,
+    },
+    {
+      title: "Autoavaliação",
+      screen: "autoavaliacao",
+      icon: <FontAwesome5 name="clipboard-list" size={32} color="#4A6FA5" />,
+    },
+    {
+      title: "Cuidados em Casa",
+      screen: "cuidados-casa",
+      icon: <MaterialIcons name="home" size={32} color="#4A6FA5" />,
+    },
+    {
+      title: "Localizar Clínicas",
+      screen: "clinicas",
+      icon: <Feather name="map-pin" size={32} color="#4A6FA5" />,
+    },
+  ];
+
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+      headerBackgroundColor={{ light: "#F0F4F8", dark: "#FFFFFF" }}
       headerImage={
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
+          source={require("@/assets/images/dogs.png")}
           style={styles.reactLogo}
         />
-      }>
+      }
+    >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
+        <ThemedText type="title" style={{ color: "#333333" }}>
+          Dermatite em Cães
         </ThemedText>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
+      <ThemedView style={styles.subtitleContainer}>
+        <ThemedText style={{ color: "#333333" }}>Guia Rápido</ThemedText>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
+
+      <View style={styles.gridContainer}>
+        {sections.map((section, index) => (
+          <TouchableOpacity
+            key={index}
+            onPress={() => router.push(section.screen)}
+            activeOpacity={0.7}
+            style={styles.squareButton}
+          >
+            <ThemedView style={styles.squareButtonInner}>
+              <View style={styles.iconContainer}>{section.icon}</View>
+              <ThemedText type="subtitle" style={styles.squareButtonText}>
+                {section.title}
+              </ThemedText>
+            </ThemedView>
+          </TouchableOpacity>
+        ))}
+      </View>
+
+      <ThemedView style={styles.footerContainer}>
+        <ThemedText style={styles.footerText}>
+          A saúde do seu cão começa pela pele!
         </ThemedText>
       </ThemedView>
     </ParallaxScrollView>
@@ -57,19 +98,63 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
+    backgroundColor: "#F9F7F1",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: 0,
     marginBottom: 8,
   },
+  subtitleContainer: {
+    backgroundColor: "#F9F7F1",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 24,
+  },
+  gridContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    paddingHorizontal: 16,
+    marginBottom: 24,
+  },
+  squareButton: {
+    width: "48%",
+    aspectRatio: 1,
+    marginBottom: 16,
+  },
+  squareButtonInner: {
+    flex: 1,
+    backgroundColor: "#F0F4F8",
+    borderRadius: 12,
+    padding: 16,
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#E0E0E0",
+  },
+  squareButtonText: {
+    textAlign: "center",
+    fontSize: 16,
+    color: "#333",
+  },
+  footerContainer: {
+    marginTop: 16,
+    padding: 16,
+    backgroundColor: "#F0F4F8",
+    borderRadius: 8,
+    alignItems: "center",
+  },
+  footerText: {
+    fontStyle: "italic",
+    color: "#333",
+  },
   reactLogo: {
-    height: 178,
-    width: 290,
+    position: "absolute",
+    top: 0,
     bottom: 0,
     left: 0,
-    position: 'absolute',
+    right: 0,
+    resizeMode: "cover",
   },
 });
