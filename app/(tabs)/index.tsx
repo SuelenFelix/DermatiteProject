@@ -19,34 +19,41 @@ export default function HomeScreen() {
     {
       title: "O que é Dermatite?",
       screen: "dermatite",
-      icon: <MaterialIcons name="menu-book" size={32} color="#4A6FA5" />,
+      icon: <MaterialIcons name="menu-book" size={28} color="#4A6FA5" />,
     },
     {
       title: "Tipos de Dermatite",
       screen: "tiposDermatite",
       icon: (
-        <MaterialCommunityIcons name="format-list-bulleted" size={32} color="#4A6FA5" />
+        <MaterialCommunityIcons
+          name="format-list-bulleted"
+          size={28}
+          color="#4A6FA5"
+        />
       ),
     },
     {
       title: "Sintomas Comuns",
       screen: "sintomas",
-      icon: <MaterialIcons name="pets" size={32} color="#4A6FA5" />,
+      icon: <MaterialIcons name="pets" size={28} color="#4A6FA5" />,
     },
-    {
-      title: "Autoavaliação",
-      screen: "autoavaliacao",
-      icon: <FontAwesome5 name="clipboard-list" size={32} color="#4A6FA5" />,
-    },
+
     {
       title: "Cuidados em Casa",
-      screen: "cuidados-casa",
-      icon: <MaterialIcons name="home" size={32} color="#4A6FA5" />,
+      screen: "cuidados",
+      icon: (
+        <MaterialIcons name="health-and-safety" size={28} color="#4A6FA5" />
+      ),
     },
     {
       title: "Localizar Clínicas",
       screen: "clinicas",
-      icon: <Feather name="map-pin" size={32} color="#4A6FA5" />,
+      icon: <Feather name="map-pin" size={28} color="#4A6FA5" />,
+    },
+    {
+      title: "Conheça a equipe",
+      screen: "equipe",
+      icon: <FontAwesome5 name="users" size={28} color="#4A6FA5" />,
     },
   ];
 

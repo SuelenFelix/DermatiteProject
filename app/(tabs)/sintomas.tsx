@@ -11,7 +11,7 @@ export default function SintomasScreen() {
       headerBackgroundColor={{ light: "#F0F4F8", dark: "#F0F4F8" }}
       headerImage={
         <Image
-          source={require("@/assets/images/dogg.jpg")}
+          source={require("@/assets/images/sintomas.png")}
           style={styles.reactLogo}
           contentFit="cover"
         />
