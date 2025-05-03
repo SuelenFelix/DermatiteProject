@@ -92,20 +92,20 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="tabela"
+        options={{
+          title: "Mensuração de prurido",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome5 name="table" size={20} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="clinicas"
         options={{
           title: "Clínicas",
           tabBarIcon: ({ color }) => (
             <Feather name="map-pin" size={28} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="equipe"
-        options={{
-          title: "Equipe",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome5 name="users" size={20} color={color} />
           ),
         }}
       />

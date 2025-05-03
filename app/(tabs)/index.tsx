@@ -46,14 +46,14 @@ export default function HomeScreen() {
       ),
     },
     {
+      title: "Mensuração de prurido",
+      screen: "tabela",
+      icon: <FontAwesome5 name="table" size={28} color="#4A6FA5" />,
+    },
+    {
       title: "Localizar Clínicas",
       screen: "clinicas",
       icon: <Feather name="map-pin" size={28} color="#4A6FA5" />,
-    },
-    {
-      title: "Conheça a equipe",
-      screen: "equipe",
-      icon: <FontAwesome5 name="users" size={28} color="#4A6FA5" />,
     },
   ];
 

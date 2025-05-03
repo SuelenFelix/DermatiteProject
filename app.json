@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "projetoMay",
-    "slug": "projetoMay",
+    "name": "dermadog",
+    "slug": "dermadog",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "projetomay",
+    "scheme": "dermadog",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {

@@ -11,7 +11,7 @@ export default function DermatiteScreen() {
       headerBackgroundColor={{ light: "#F0F4F8", dark: "#F0F4F8" }}
       headerImage={
         <Image
-          source={require("@/assets/images/dogs.png")}
+          source={require("@/assets/images/duvida.png")}
           style={styles.reactLogo}
         />
       }
@@ -28,16 +28,6 @@ export default function DermatiteScreen() {
           bacteriana, viral, fúngica ou por protozoário. Logo, é um nome
           generalizado para a inflamação da pele do animal.{" "}
         </ThemedText>
-
-        {/* <ThemedText style={styles.contentText}>
-          É uma das condições mais comuns em cães e pode se manifestar através de sintomas como:
-        </ThemedText>
-
-        <ThemedText style={styles.bulletPoint}>• Coceira intensa (prurido)</ThemedText>
-        <ThemedText style={styles.bulletPoint}>• Vermelhidão da pele</ThemedText>
-        <ThemedText style={styles.bulletPoint}>• Perda de pelo</ThemedText>
-        <ThemedText style={styles.bulletPoint}>• Descamação ou crostas</ThemedText>
-        <ThemedText style={styles.bulletPoint}>• Odor desagradável</ThemedText> */}
 
         <ThemedText style={styles.contentText}>
           Por isso, existem diferentes tipos de dermatite canina, que terão
